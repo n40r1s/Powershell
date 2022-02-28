@@ -31,5 +31,5 @@ function Downloadrepo
     # remove zip file
     Remove-Item -Path $ZipFile -Force 
 }
-[String]$location = Split-Path -Parent"C:\Users\win8\Downloads\Exploit"
+[String]$location = Split-Path -Parent "C:\Users\win8\Downloads\Exploit"
 
