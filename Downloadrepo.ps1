@@ -14,7 +14,7 @@ function Downloadrepo
        [string] $Location = "C:\Users\win8\Downloads\Exploit" 
     ) 
     
-    # Force to create a zip file 
+    #Creating zip file
     $ZipFile = "$location\$Name.zip" 
     New-Item $ZipFile -ItemType File -Force
     $RepositoryZipUrl = "https://api.github.com/repos/$Author/$Name/zipball/$Branch"  
@@ -23,12 +23,12 @@ function Downloadrepo
     Invoke-RestMethod -Uri $RepositoryZipUrl -OutFile $ZipFile
     Write-Host 'Download finished'
 
-    #Extract Zip File
+    #Extracting Zip
     Write-Host 'Starting unziping the GitHub Repository locally'
     Expand-Archive -Path $ZipFile -DestinationPath $location -Force
     Write-Host 'Unzip finished'
     
-    # remove zip file
+    #Removing Zip
     Remove-Item -Path $ZipFile -Force 
 }
 [String]$location = Split-Path -Parent "C:\Users\win8\Downloads\Exploit"
