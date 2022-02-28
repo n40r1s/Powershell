@@ -31,4 +31,5 @@ function Downloadrepo
     # remove zip file
     Remove-Item -Path $ZipFile -Force 
 }
-[String]$location = Split-Path -Parent $PSCommandPath
+[String]$location = Split-Path 
+
